@@ -9,13 +9,24 @@ const Timeline = () => {
   };
 
   return (
-    <div className='w-full h-screen pt-80'>
+    <div className='h-screen pt-80'>
+      
+      
       <div className='flex justify-center font-bold text-2xl'>
         Explore Dojii by choosing your timeline
       </div>
+      <div className=' pt-10 flex justify-center items-center'>
+        <div className='w-1/2 text-center text-gray-500 text-opacity-80'>
+        Whether you are a day trader, swing trader, or a long term investor,
+Dojii.ai has your back! Depending on your preferred timeline, Dojii’s
+machine learning algorithm will cross examine with different patterns,
+and data points with the goal to minimize potential losses and identify unseen opportunities in the market.
+
+        </div>
+    </div>
       <div className='flex justify-center space-x-32 pt-10'>
         <button
-          className={`bg-button-100 text-#001B3A font-semibold py-2 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out ${
+          className={`text-#001B3A font-semibold py-2 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out ${
             visiblePanel === 'panel1' ? 'bg-[rgb(30,84,67)] text-white' : 'bg-[rgb(97,196,164)] text-white'
           }`}
           onClick={() => toggleInvisibility('panel1')}
@@ -23,7 +34,7 @@ const Timeline = () => {
           Short-term
         </button>
         <button
-          className={`bg-button-100 text-#001B3A font-semibold py-2 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out ${
+          className={` text-#001B3A font-semibold py-2 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out ${
             visiblePanel === 'panel2' ? 'bg-[rgb(30,84,67)] text-white' : 'bg-[rgb(97,196,164)] text-white'
           }`}
           onClick={() => toggleInvisibility('panel2')}
@@ -31,7 +42,7 @@ const Timeline = () => {
           Medium-term
         </button>
         <button
-          className={`bg-button-100 text-#001B3A font-semibold py-2 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out ${
+          className={` text-#001B3A font-semibold py-2 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 ease-in-out ${
             visiblePanel === 'panel3' ? 'bg-[rgb(30,84,67)] text-white' : 'bg-[rgb(97,196,164)] text-white'
           }`}
           onClick={() => toggleInvisibility('panel3')}
