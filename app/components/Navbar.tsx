@@ -1,6 +1,6 @@
 "use client"
 
-import Link from 'next/link'
+import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -26,28 +26,24 @@ const Navbar = () => {
   }, []);
 
   return (
-
-
-    <div className={`container mx-auto flex justify-between items-center fixed top-0 left-0 right-0 bg-${bgColor}-500`}>
-      <a href='/'>
-        <Image
-          className='py-5'
-          src="/images/doji.png"
-          alt="Example Image"
-          width={200}
-          height={30}
-        />
+    <div className={`flex justify-between items-center fixed top-0 left-0 right-0 ${bgColor === 'blue' ? 'bg-blue-500' : 'bg-transparent'}`}>
+      <a href='/' className='py-5 pl-20'>
+        <Image src='/images/doji.png' alt='Example Image' width={200} height={30} />
       </a>
-      <ul className="flex space-x-4">
+      <ul className='flex space-x-4 pr-16'>
         <li>
-          <a href="/about" className="hover:text-gray-600">About</a>
+          <a href='/about' className= 'hover:text-gray-600'>
+            About
+          </a>
         </li>
         <li>
-          <a href="/contact" className="hover:text-gray-600">Contact</a>
+          <a href='/contact' className='hover:text-gray-600'>
+            Contact
+          </a>
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
