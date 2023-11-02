@@ -26,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`flex justify-between items-center fixed top-0 left-0 right-0 ${bgColor === 'blue' ? 'bg-blue-500' : 'bg-transparent'}`}>
+    <div className={`flex justify-between items-center fixed top-0 left-0 right-0 ${bgColor === 'blue' ? 'bg-blue-500' : 'bg-transparent'} z-50`}>
       <a href='/' className='py-5 pl-20'>
         <Image src='/images/doji.png' alt='Example Image' width={200} height={30} />
       </a>
