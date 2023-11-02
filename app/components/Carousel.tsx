@@ -9,26 +9,36 @@ interface CarouselProps {
 }
 
 const Carousel: React.FC<CarouselProps> = ({
-  autoSlide = false,
-  autoSlideInterval = 3000,
+  autoSlide = true,
+  autoSlideInterval = 10000,
   slides,
   setActiveSlide,
 }) => {
   const [curr, setCurr] = useState(0);
+  const [progress, setProgress] = useState(0);
 
   const prev = () =>
     setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1));
   const next = () =>
     setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
-    useEffect(() => {
-        setActiveSlide(curr);
-      }, [curr, setActiveSlide]);
+  useEffect(() => {
+    setActiveSlide(curr);
+  }, [curr, setActiveSlide]);
 
   useEffect(() => {
     if (!autoSlide) return;
-    const slideInterval = setInterval(next, autoSlideInterval);
-    return () => clearInterval(slideInterval);
+    const interval = setInterval(() => {
+      setProgress((progress) => {
+        const newProgress = progress + 1;
+        if (newProgress === 100) {
+          next();
+          return 0;
+        }
+        return newProgress;
+      });
+    }, autoSlideInterval / 100);
+    return () => clearInterval(interval);
   }, [autoSlide, autoSlideInterval, next]);
 
   return (
@@ -55,17 +65,15 @@ const Carousel: React.FC<CarouselProps> = ({
           <ChevronRight size={40} />
         </button>
       </div>
-
-      <div className="absolute bottom-4 right-0 left-0">
-        <div className="flex items-center justify-center gap-2">
-          {slides.map((_, i) => (
-            <div
-              key={i}
-              className={`transition-all w-3 h-3 bg-white rounded-full ${
-                curr === i ? "p-2" : "bg-opacity-50"
-              }`}
-            />
-          ))}
+      <div className="bottom-0 left-0 right-0 flex items-center relative">
+        <div className="text-white bg-black px-2">
+          {curr + 1} / {slides.length}
+        </div>
+        <div className=" h-0.5 flex-1 relative">
+          <div
+            className="top-0 left-0 bg-black h-0.5"
+            style={{ width: `${progress}%` }}
+          />
         </div>
       </div>
     </div>

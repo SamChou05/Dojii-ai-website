@@ -19,7 +19,7 @@ const Introduction = () => {
     ];
   
     return (
-      <div className='w-full h-96 pt-28'>
+      <div className='w-full h-full pt-28'>
         <div className=" bg-[url('/images/introbackground.png')] grid grid-cols-2 gap-4 h-[600px]">
           <div className="col-span-1 w-full h-full">
             <p className='text-4xl font-semibold pl-44 pt-10'>
