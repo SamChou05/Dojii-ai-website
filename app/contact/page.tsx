@@ -7,7 +7,7 @@ export const contact = () => {
   return (
     <div>
         <Navbar/>
-        <div className="p-4 max-w-3xl mx-auto">
+        <div className="p-4 max-w-3xl mx-auto pt-28">
         
             <h1 className="text-3xl font-bold">Contact Us</h1>
             <p>Please fill in the form below</p>
