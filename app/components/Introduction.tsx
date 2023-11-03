@@ -15,7 +15,7 @@ const Introduction = () => {
     const textContent = [
       "Dojii utilizes AI and ML for a new and improved way to predict stock prices",
       "Slide 2 text goes here",
-      "Slide 3 text goes here",
+      "text area 3 goes here",
     ];
   
     return (
