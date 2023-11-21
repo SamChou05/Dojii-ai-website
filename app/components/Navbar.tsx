@@ -1,3 +1,5 @@
+"use client"
+
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -13,7 +15,7 @@ const Navbar = () => {
       if (offset > 0) {
         setBgColor('blue');
         setTextColor('white'); // Change text color on scroll
-        setImageSrc('/images/alternative.png'); // Change image on scroll
+        setImageSrc(''); // Change image on scroll
       } else {
         setBgColor('transparent');
         setTextColor('black'); // Revert text color when not scrolling
